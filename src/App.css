@@ -1,38 +1,118 @@
-.App {
+body, main, div, span,
+button, nav, textarea {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  min-width: 50em;
+  min-height: 20em;
+}
+
+main.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main.submit p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+main.submit .success,
+main.submit .fail {
+  background: #ddd;
+  border: 1px solid #ccc;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+main.submit .success {
+  background: lightgreen;
+  border-color: darkgreen;
+}
+
+main.submit .fail {
+  background: pink;
+  border-color: darkred;
+}
+
+h1, main, nav {
+  margin-bottom: 2rem;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p.error {
+  color: #cc0000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label {
+  line-height: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  min-height: calc(20em - 1rem);
+  padding: 0.5em;
+}
+
+nav.progress {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+nav.progress::after {
+  content: "";
+  position: absolute;
+  width: 66%;
+  height: 2px;
+  background: #bbb;
+  z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav.progress div {
+  background: #e6e6e6;
+  color: #555;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  position: relative;
 }
+
+nav.progress span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+nav.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.progress div.current-step {
+  background: lightgreen;
+  color: darkgreen;
+}
+
