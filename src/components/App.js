@@ -1,4 +1,3 @@
-import logo from '../logo.svg';
 import { UploadPartsPage } from './UploadPartsPage'
 import '../App.css';
 
